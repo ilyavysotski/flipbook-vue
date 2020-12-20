@@ -101,14 +101,20 @@
             @mousedown="onMouseDown"
           >
             <div
-              class="click-to-flip left"
-              :style="{ cursor: canFlipLeft ? 'pointer' : 'auto'}"
-              @click="canFlipLeft && flipLeft"
+              :class="[
+                'click-to-flip',
+                'left',
+                canFlipLeft ? 'click-to-flip_active' : ''
+              ]"
+              @click="flipLeft"
             />
             <div
-              class="click-to-flip right"
-              :style="{ cursor: canFlipRight ? 'pointer' : 'auto'}"
-              @click="canFlipRight && flipRight"
+              :class="[
+                'click-to-flip',
+                'right',
+                canFlipRight ? 'click-to-flip_active' : ''
+              ]"
+              @click="flipRight"
             />
           </div>
         </div>
@@ -885,11 +891,18 @@ export default
 }
 
 .click-to-flip {
+  z-index: 100;
   position: absolute;
   width: 12.5%;
   height: 100%;
   top: 0;
   user-select: none;
+}
+
+.click-to-flip_active:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s;
 }
 
 .click-to-flip.left {
