@@ -103,12 +103,12 @@
             <div
               class="click-to-flip left"
               :style="{ cursor: canFlipLeft ? 'pointer' : 'auto'}"
-              @click="flipLeft"
+              @click="canFlipLeft && flipLeft"
             />
             <div
               class="click-to-flip right"
               :style="{ cursor: canFlipRight ? 'pointer' : 'auto'}"
-              @click="flipRight"
+              @click="canFlipRight && flipRight"
             />
           </div>
         </div>
