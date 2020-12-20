@@ -31,16 +31,6 @@
       @wheel="onWheel"
     >
       <div class="flipbook-container" :style="{ transform: `scale(${zoom})` }">
-        <div
-          class="click-to-flip left"
-          :style="{ cursor: canFlipLeft ? 'pointer' : 'auto'}"
-          @click="flipLeft"
-        />
-        <div
-          class="click-to-flip right"
-          :style="{ cursor: canFlipRight ? 'pointer' : 'auto'}"
-          @click="flipRight"
-        />
         <div :style="{ transform: `translateX(${centerOffsetSmoothed}px)` }">
           <img
             class="page fixed"
@@ -109,7 +99,18 @@
             @touchstart="onTouchStart"
             @pointerdown="onPointerDown"
             @mousedown="onMouseDown"
-          />
+          >
+            <div
+              class="click-to-flip left"
+              :style="{ cursor: canFlipLeft ? 'pointer' : 'auto'}"
+              @click="flipLeft"
+            />
+            <div
+              class="click-to-flip right"
+              :style="{ cursor: canFlipRight ? 'pointer' : 'auto'}"
+              @click="flipRight"
+            />
+          </div>
         </div>
       </div>
     </div>
