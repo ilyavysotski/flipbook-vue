@@ -891,7 +891,6 @@ export default
 }
 
 .click-to-flip {
-  z-index: 100;
   position: absolute;
   width: 12.5%;
   height: 100%;
