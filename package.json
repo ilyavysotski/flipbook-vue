@@ -27,7 +27,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --dest demo",
-    "dist": "rollup -c rollup.config.js"
+    "dist": "rollup -c rollup.config.js",
+    "prepare": "npm run dist"
   },
   "dependencies": {
     "rematrix": "^0.4.1"
