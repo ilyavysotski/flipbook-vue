@@ -39,7 +39,7 @@
               width: pageWidth + 'px',
               height: pageHeight + 'px',
               left: xMargin + 'px',
-              top: yMargin + 'px'
+              top: 0
             }"
             :src="pageUrlLoading(leftPage, true)"
             v-if="showLeftPage"
@@ -51,7 +51,7 @@
               width: pageWidth + 'px',
               height: pageHeight + 'px',
               left: viewWidth / 2 + 'px',
-              top: yMargin + 'px'
+              top: 0
             }"
             v-if="showRightPage"
             :src="pageUrlLoading(rightPage, true)"
@@ -92,7 +92,7 @@
             class="bounding-box"
             :style="{
               left: boundingLeft + 'px',
-              top: yMargin + 'px',
+              top: 0,
               width: boundingRight - boundingLeft + 'px',
               height: pageHeight + 'px',
               cursor: cursor
