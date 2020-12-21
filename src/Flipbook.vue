@@ -9,6 +9,7 @@
       numPages,
       flipLeft,
       flipRight,
+      goToPage,
       zoomIn,
       zoomOut
     }" />
