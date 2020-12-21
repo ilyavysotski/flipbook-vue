@@ -26,7 +26,7 @@ export default class Matrix
 
   transformX: (x) -> (x * @m[0] + @m[12]) / (x * @m[3] + @m[15])
 
-  translate: (x, y) -> @multiply translate x, y
+  translate: (x, y) -> @multiply translate x
 
   translate3d: (x, y, z) -> @multiply translate3d x, y, z
 
