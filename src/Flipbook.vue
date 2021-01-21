@@ -893,9 +893,6 @@ export default
 
 .click-to-flip {
   position: absolute;
-  width: 12.5%;
-  height: 100%;
-  top: 0;
   user-select: none;
 }
 
