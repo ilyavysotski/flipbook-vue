@@ -107,7 +107,6 @@
                 'left',
                 canFlipLeft ? 'click-to-flip_active' : ''
               ]"
-              @click="flipLeft"
             />
             <div
               :class="[
@@ -115,7 +114,6 @@
                 'right',
                 canFlipRight ? 'click-to-flip_active' : ''
               ]"
-              @click="flipRight"
             />
           </div>
         </div>
@@ -736,8 +734,15 @@ export default
 
     swipeEnd: (touch) ->
       return unless @touchStartX?
-      @zoomAt touch if @maxMove < @swipeMin
-      if @flip.direction != null and not @flip.auto
+      touchedElement = touch.target
+      if touchedElement.nodeType != Node.TEXT_NODE and touchedElement.classList.contains("click-to-flip") and this.flip.direction == null
+        if (touchedElement.classList.contains("right"))
+          this.flipRight();
+        else if (touchedElement.classList.contains("left"))
+          this.flipLeft();
+      else if @maxMove < @swipeMin and not @flip.auto and not @flip.direction
+        @zoomAt touch
+      else if @flip.direction != null and not @flip.auto
         if @flip.progress > 1/4
           @flipAuto(false)
         else
